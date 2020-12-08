@@ -21,7 +21,7 @@ function brute_force(A::Array)
 end
 
 function find_max_crossing_subarray(A::Array, low::Int, mid::Int, high::Int)
-    left_sum = - typemax(Int) ÷ 2
+    left_sum = - Base.Inf
     sum = 0
     max_left = -1
     for i in reverse(low:mid)
@@ -31,7 +31,7 @@ function find_max_crossing_subarray(A::Array, low::Int, mid::Int, high::Int)
             max_left = i
         end
     end
-    right_sum = - typemax(Int) ÷ 2
+    right_sum = - Base.Inf
     sum = 0
     max_right = -1
     for j in mid+1:high
